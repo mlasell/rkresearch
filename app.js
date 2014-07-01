@@ -5,4 +5,5 @@
 // date modified: 1 June 2014
 // description  : primary file for Michael Lasell's rkresearch app on heroku
 
-
+//var stub = document.getElementById('stub');
+console.log("Hello, World!")
