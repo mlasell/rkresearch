@@ -35,6 +35,6 @@ http.createServer(function (req, res) {
  
 }).listen(process.env.PORT || 5000);
 
-app.get('/', function (request, response) {
-	
+http.get('/', function (request, response) {
+
 });
