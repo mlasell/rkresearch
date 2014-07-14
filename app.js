@@ -10,6 +10,15 @@
 // Create a HTTP server on port 8000
 var http = require('http');
 var port = process.env.PORT || 8000;
+
+// Mongo initialization, setting up a connection to a MongoDB  (on heroku or localhost)
+var mongoUri = process.env.MONGOLAB_URI ||
+	process.env.MONGOHQ_URL ||
+	'mongodb://localhost/rkdb';
+var mongo = require('mongodb');
+var db = mongo.Db.connect(mongoUri, function (error, databaseConnection) {
+	db = databaseConnection;
+});
  
 http.createServer(function (req, res) {
  
@@ -24,4 +33,4 @@ http.createServer(function (req, res) {
 		res.end("This is page 2. <a href='/'>Back.</a>\n");
 	}
  
-}).listen(port);
+}).listen(process.env.PORT || 5000);
