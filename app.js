@@ -26,7 +26,7 @@ var db = mongo.Db.connect(mongoUri, function (error, databaseConnection) {
 });
 
 app.get('/', function(request, response) {
-	response.sendFile('./views/index.html');
+	response.sendfile('./views/index.html');
 });
  
 /*http.createServer(function (req, res) {
