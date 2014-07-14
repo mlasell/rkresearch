@@ -35,6 +35,6 @@ http.createServer(function (req, res) {
  
 }).listen(process.env.PORT || 5000);
 
-$.get('rkresearch.herokuapp.com/', function (request, response) {
+//$.get('rkresearch.herokuapp.com/', function (request, response) {
 
-});
+//});
