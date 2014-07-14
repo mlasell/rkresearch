@@ -7,4 +7,6 @@ description  : readme for Michael Lasell's rkresearch app on heroku
 
 ================================================================
 
-these aren't the droids you're looking for...
+Note about Express: I started using Express because I haven't been able to
+figure out the straight jQuery and Ajax and I wanted to get some stuff working
+to test my jQuery knowledge.

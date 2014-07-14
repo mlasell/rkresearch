@@ -5,11 +5,16 @@
 // date modified: 1 June 2014
 // description  : primary file for Michael Lasell's rkresearch app on heroku
 
-//var stub = document.getElementById('stub');
+// Express initialization
+var express = require('express');
+	bodyParser = require('body-parser');
+var app = express();
+//app.use(express.bodyParser());
+app.set('title', 'rkresearch');
 
 // Create a HTTP server on port 8000
-var http = require('http');
-var port = process.env.PORT || 8000;
+//var http = require('http');
+//var port = process.env.PORT || 8000;
 
 // Mongo initialization, setting up a connection to a MongoDB  (on heroku or localhost)
 var mongoUri = process.env.MONGOLAB_URI ||
@@ -19,8 +24,12 @@ var mongo = require('mongodb');
 var db = mongo.Db.connect(mongoUri, function (error, databaseConnection) {
 	db = databaseConnection;
 });
+
+app.get('/', function(request, response) {
+	res.sendFile('./views/index.html');
+});
  
-http.createServer(function (req, res) {
+/*http.createServer(function (req, res) {
  
 	var path = req.url;
  
@@ -33,8 +42,6 @@ http.createServer(function (req, res) {
 		res.end("This is page 2. <a href='/'>Back.</a>\n");
 	}
  
-}).listen(process.env.PORT || 5000);
+}).listen(process.env.PORT || 5000);*/
 
-//$.get('rkresearch.herokuapp.com/', function (request, response) {
-
-//});
+app.listen(process.env.PORT || 3000);
