@@ -9,8 +9,8 @@
 var express = require('express');
 	bodyParser = require('body-parser');
 var app = express();
-//app.use(express.bodyParser());
 app.set('title', 'rkresearch');
+app.use('styles', express.static(__dirname + "/public/styles"));
 
 // Create a HTTP server on port 8000
 //var http = require('http');
@@ -24,8 +24,6 @@ var mongo = require('mongodb');
 var db = mongo.Db.connect(mongoUri, function (error, databaseConnection) {
 	db = databaseConnection;
 });
-
-app.use('/public', express.static(__dirname + "/public"));
 
 app.get('/', function(request, response) {
 	response.sendfile('./views/index.html');
