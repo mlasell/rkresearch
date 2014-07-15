@@ -25,9 +25,7 @@ var db = mongo.Db.connect(mongoUri, function (error, databaseConnection) {
 	db = databaseConnection;
 });
 
-app.configure(function(){
-    app.use(express.static(__dirname + '/public'));
-});
+app.use('/public', express.static(__dirname + "/public"));
 
 app.get('/', function(request, response) {
 	response.sendfile('./views/index.html');
