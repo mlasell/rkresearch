@@ -10,8 +10,8 @@ var express = require('express');
 	bodyParser = require('body-parser');
 var app = express();
 app.set('title', 'rkresearch');
-app.use('styles', express.static(__dirname + "/public/styles"));
-
+app.use('styles', express.static(__dirname + "/public/styles/"));
+app.use('img', express.static(__dirname + "/public/img/"));
 // Create a HTTP server on port 8000
 //var http = require('http');
 //var port = process.env.PORT || 8000;
